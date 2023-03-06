@@ -29,8 +29,8 @@ CFLAGS 				:= -O0 -g $(WARNINGS)
 DEFINES				:= -D SIMULATOR=1 -D LV_BUILD_TEST=0
 
 # Include simulator inc folder first so lv_conf.h from custom UI can be used instead
-INC 				:= -I./ui/simulator/inc/ -I./ -I./lvgl/
-LDLIBS	 			:= -lSDL2 -lm
+INC 				:= -I./ui/simulator/inc/ -I./ -I./lvgl/ -I/opt/homebrew/Cellar/sdl2/2.26.3/include
+LDLIBS	 			:= -lSDL2 -lm -L/opt/homebrew/Cellar/sdl2/2.26.3/lib
 BIN 				:= $(BIN_DIR)/demo
 
 COMPILE				= $(CC) $(CFLAGS) $(INC) $(DEFINES)
